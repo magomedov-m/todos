@@ -1,0 +1,123 @@
+/* App.css */
+
+:root {
+    --primary-color: #4caf50;
+    --primary-hover: #45a049;
+    --danger-color: #f44336;
+    --danger-hover: #e53935;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --completed-color: #888;
+    --card-background: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.app-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    font-family: 'Arial', sans-serif;
+}
+
+.container_text {
+    max-width: 320px;
+}
+
+.container_btn {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.app-title {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.todo-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.add-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: var(--primary-hover);
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--card-background);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+}
+
+.completed .todo-checkbox {
+    text-decoration: line-through;
+    color: var(--completed-color);
+}
+
+.delete-button {
+    background-color: var(--danger-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: var(--danger-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .input-container {
+        flex-direction: column;
+    }
+
+    .todo-input {
+        margin-bottom: 10px;
+    }
+}
