@@ -11,7 +11,7 @@ function App() {
   }, [])
 
   const fetchTodo = async () => {
-    const {data, error} = await supabase.from('todo').select('*');
+    const {data, error} = await supabase.from('TodoList').select('*');
 
     if (error) {
       console.log('error fetching:', error)
@@ -21,7 +21,7 @@ function App() {
   }
 
   const completed = async (id, isCompleted) => {
-    const {data, error} = await supabase.from('todo').update({isCompleted: !isCompleted}).eq('id', id)
+    const {data, error} = await supabase.from('TodoList').update({isCompleted: !isCompleted}).eq('id', id)
 
     if (error) {
       console.log('error update:', error)
@@ -36,7 +36,7 @@ function App() {
       name: newTodo,
       isCompleted: false,
     }
-    const {data, error} = await supabase.from('todo').insert([newTodoData]).single()
+    const {data, error} = await supabase.from('TodoList').insert([newTodoData]).single()
 
     if (error) {
       console.log('error, adding todo:', error)
@@ -47,7 +47,7 @@ function App() {
   }
 
   const deleteTask = async (id) => {
-    const {data, error} = await supabase.from('todo').delete().eq('id', id)
+    const {data, error} = await supabase.from('TodoList').delete().eq('id', id)
 
     if (error) {
       console.log('error delete:', error)
