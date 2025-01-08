@@ -96,13 +96,13 @@ function App() {
             </p>
             <div className="container_btn">
               <button
-                className="add-button"
+                className="add-button btn"
                 onClick={() => completed(todo.id, todo.isCompleted)}
               >
                 {todo.isCompleted ? "Выполнено" : "Выполнить"}
               </button>
               <button
-                className="delete-button"
+                className="delete-button btn"
                 onClick={() => deleteTask(todo.id)}
               >
                 Удалить задачу
